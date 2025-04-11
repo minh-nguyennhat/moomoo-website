@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.5rem;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fff, #f0f4f8);
+  min-height: 100vh;
+}
+
+.milk-drop {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: milk-drip 3s infinite ease-in;
+  position: absolute;
+  top: 0;
+  transform-origin: center top;
+}
+
+@keyframes milk-drip {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 0.8;
+  }
+  30% {
+    transform: scale(1) translateY(10px);
+    opacity: 0.8;
+  }
+  80% {
+    transform: scale(1) translateY(80px);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.5) translateY(120px);
+    opacity: 0;
+  }
+}

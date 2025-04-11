@@ -1,0 +1,47 @@
+.techBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(59, 130, 246, 0.1),
+      transparent 70%
+    ),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1), transparent 50%);
+  z-index: -1;
+}
+
+.circuit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(59, 130, 246, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+.glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(59, 130, 246, 0.5),
+    rgba(168, 85, 247, 0.5),
+    transparent
+  );
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
