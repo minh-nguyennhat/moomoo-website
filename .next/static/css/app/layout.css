@@ -536,6 +536,33 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* Thay đổi từ màu hồng sang màu xanh công nghệ */
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Các màu phụ điều chỉnh cho phù hợp */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 50%; /* Cập nhật màu ring để phù hợp */
+
+    --radius: 0.5rem;
+  }
 .container {
   width: 100%;
   margin-right: auto;
@@ -732,36 +759,27 @@ video {
   border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
 }
 .border-input {
-  --tw-border-opacity: 1;
-  border-color: hsl(214.3 31.8% 91.4% / var(--tw-border-opacity, 1));
+  border-color: hsl(var(--input));
 }
 .bg-background {
-  --tw-bg-opacity: 1;
-  background-color: hsl(0 0% 100% / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--background));
 }
 .bg-blue-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity, 1));
 }
-.bg-cow-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(230 170 170 / var(--tw-bg-opacity, 1));
-}
 .bg-destructive {
-  --tw-bg-opacity: 1;
-  background-color: hsl(0 84.2% 60.2% / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--destructive));
 }
 .bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: hsl(222.2 47.4% 11.2% / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--primary));
 }
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
 }
 .bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: hsl(210 40% 96.1% / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--secondary));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -891,13 +909,8 @@ video {
 .leading-tight {
   line-height: 1.25;
 }
-.text-cow-primary {
-  --tw-text-opacity: 1;
-  color: rgb(230 170 170 / var(--tw-text-opacity, 1));
-}
 .text-destructive-foreground {
-  --tw-text-opacity: 1;
-  color: hsl(210 40% 98% / var(--tw-text-opacity, 1));
+  color: hsl(var(--destructive-foreground));
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -912,16 +925,13 @@ video {
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 .text-primary {
-  --tw-text-opacity: 1;
-  color: hsl(222.2 47.4% 11.2% / var(--tw-text-opacity, 1));
+  color: hsl(var(--primary));
 }
 .text-primary-foreground {
-  --tw-text-opacity: 1;
-  color: hsl(210 40% 98% / var(--tw-text-opacity, 1));
+  color: hsl(var(--primary-foreground));
 }
 .text-secondary-foreground {
-  --tw-text-opacity: 1;
-  color: hsl(222.2 47.4% 11.2% / var(--tw-text-opacity, 1));
+  color: hsl(var(--secondary-foreground));
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -944,7 +954,7 @@ video {
   outline-style: solid;
 }
 .ring-offset-background {
-  --tw-ring-offset-color: hsl(0 0% 100%);
+  --tw-ring-offset-color: hsl(var(--background));
 }
 .blur {
   --tw-blur: blur(8px);
@@ -992,10 +1002,6 @@ video {
   }
 }
 
-:root {
-  --radius: 0.5rem;
-}
-
 body {
   background: linear-gradient(to bottom right, #fff, #f0f4f8);
   min-height: 100vh;
@@ -1036,34 +1042,23 @@ body {
 }
 
 .hover\:bg-accent:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(210 40% 96.1% / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-cow-primary\/90:hover {
-  background-color: rgb(230 170 170 / 0.9);
+  background-color: hsl(var(--accent));
 }
 
 .hover\:bg-destructive\/90:hover {
-  background-color: hsl(0 84.2% 60.2% / 0.9);
+  background-color: hsl(var(--destructive) / 0.9);
 }
 
 .hover\:bg-primary\/90:hover {
-  background-color: hsl(222.2 47.4% 11.2% / 0.9);
+  background-color: hsl(var(--primary) / 0.9);
 }
 
 .hover\:bg-secondary\/80:hover {
-  background-color: hsl(210 40% 96.1% / 0.8);
+  background-color: hsl(var(--secondary) / 0.8);
 }
 
 .hover\:text-accent-foreground:hover {
-  --tw-text-opacity: 1;
-  color: hsl(222.2 47.4% 11.2% / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-cow-primary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(230 170 170 / var(--tw-text-opacity, 1));
+  color: hsl(var(--accent-foreground));
 }
 
 .hover\:underline:hover {
@@ -1082,8 +1077,7 @@ body {
 }
 
 .focus-visible\:ring-ring:focus-visible {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: hsl(222.2 84% 4.9% / var(--tw-ring-opacity, 1));
+  --tw-ring-color: hsl(var(--ring));
 }
 
 .focus-visible\:ring-offset-2:focus-visible {
